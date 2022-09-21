@@ -29,11 +29,11 @@ h = JSON.parse(response.read_body)
 
 
 
-visitors1 = h['response'].first['teams']['visitors']
-home1 = h['response'].first['teams']['home']
+#  visitors1 = h['response'].first['teams']['visitors']
+# home1 = h['response'].first['teams']['home']
 
 #   puts home1['name']
-#    puts home1
+#   puts home1
 
 
   h['response'].each do |match|

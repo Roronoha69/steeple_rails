@@ -5,5 +5,7 @@
     <%= f.input :tweeet, label: "Publier quelque chose", input_html: { class: "textarea "}, wrapper: false, label_html: {class: "label"}, placeholder: "Ecrire ...", autofocus: true %>
   </div>
 </div>
-<%= f.button :submit, class: "button is-info"%>
+<%= f.button :submit, label: "Publier", class: "button is-info" do %>
+Publier
+<% end %>
 <% end %>
