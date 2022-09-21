@@ -7,6 +7,32 @@ class TweeetsController < ApplicationController
   def index
     @tweeets = Tweeet.all.order("created_at DESC")
     @tweeet = Tweeet.new
+    @user = User.all
+
+
+
+    # on veut trier les user en fonction de leur annivesaire
+      tablo = []
+    @user.each_with_index do |user, index|
+    
+      
+      
+
+      bday = Date.new(Date.today.year, user.birthday.month, user.birthday.day)
+      bday += 1.year if Date.today > bday
+      
+      tablo.push(name: user.name, day: (bday - Date.today).to_i)
+
+      
+    end
+      
+      @annivs = tablo.sort_by { |hsh| hsh[:day] }
+      
+      
+    
+    
+
+
   end
 
   # GET /tweeets/1
@@ -30,7 +56,7 @@ class TweeetsController < ApplicationController
 
     respond_to do |format|
       if @tweeet.save
-        format.html { redirect_to root_path, notice: 'Tweeet was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Publication was successfully created.' }
         format.json { render :show, status: :created, location: @tweeet }
       else
         format.html { render :new }
@@ -44,7 +70,7 @@ class TweeetsController < ApplicationController
   def update
     respond_to do |format|
       if @tweeet.update(tweeet_params)
-        format.html { redirect_to @tweeet, notice: 'Tweeet was successfully updated.' }
+        format.html { redirect_to @tweeet, notice: 'Publication was successfully updated.' }
         format.json { render :show, status: :ok, location: @tweeet }
       else
         format.html { render :edit }
@@ -58,7 +84,7 @@ class TweeetsController < ApplicationController
   def destroy
     @tweeet.destroy
     respond_to do |format|
-      format.html { redirect_to tweeets_url, notice: 'Tweeet was successfully destroyed.' }
+      format.html { redirect_to tweeets_url, notice: 'Publication was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

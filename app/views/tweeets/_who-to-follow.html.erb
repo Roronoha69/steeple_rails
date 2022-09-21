@@ -1,57 +1,67 @@
 <div class="column">
 	<nav class="panel">
-		<p class="panel-heading">Who to Follow</p>
+		<p class="panel-heading">Evenements</p>
 	
-	<div class="panel-block">
-		<article class="media">
-			<div class="media-left">
-				<figure class="image is-32x32">
-					<img src="https://bulma.io/images/placeholders/64x64.png">
-				</figure>
-			</div>
-			<div class="media-content">
-				<div class="content">
-					<p>
-						<strong>John Smith</strong>
-						<small>@johnsmith</small>
-					</p>
-				</div>
-			</div>
-		</article>
-	</div>
+<% @annivs.each do |collaborateur| %>
+
 		<div class="panel-block">
 		<article class="media">
 			<div class="media-left">
 				<figure class="image is-32x32">
-					<img src="https://bulma.io/images/placeholders/64x64.png">
+					 <%= image_tag "anniversaire.JPG" %>
 				</figure>
 			</div>
+			
 			<div class="media-content">
 				<div class="content">
 					<p>
-						<strong>John Smith</strong>
-						<small>@johnsmith</small>
+						<strong><%= collaborateur[:name] %></strong>
+						<small>Anniversaire dans <%= collaborateur[:day] %> jours</small>
 					</p>
 				</div>
+			
 			</div>
 		</article>
 	</div>
-		<div class="panel-block">
-		<article class="media">
-			<div class="media-left">
-				<figure class="image is-32x32">
-					<img src="https://bulma.io/images/placeholders/64x64.png">
-				</figure>
-			</div>
-			<div class="media-content">
-				<div class="content">
-					<p>
-						<strong>John Smith</strong>
-						<small>@johnsmith</small>
-					</p>
-				</div>
-			</div>
-		</article>
-	</div>
+
+	<% end %>
+		
 	</nav>
+
+<nav class="panel">
+		<p class="panel-heading">Nouveau module</p>
+	
+
+
+		<div class="panel-block">
+		<article class="media">
+			<div class="media-left">
+				<figure class="image is-32x32">
+					 <%= image_tag "bball.png" %>
+				</figure>
+			</div>
+			
+			<div class="media-content">
+				<div class="content">
+					<p>
+						<strong>Le module NBA </strong>
+						<br>
+						<small>Pour suivre les match en direct</small>
+						<br>
+						<a href='/homes' class="button is-warning" >Découvir </a>
+					</p>
+				</div>
+			
+			</div>
+		</article>
+	</div>
+
+	
+		
+	</nav>
+
 </div>
+
+
+
+	

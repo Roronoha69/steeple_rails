@@ -1,0 +1,86 @@
+<p id="notice"><%= notice %></p>
+
+
+<main role="main">
+
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="h1">Module NBA 🏀</h1>
+          <p class="lead text-muted">Avec 'API-NBA' de Rapid API </p>
+          <p>
+            <a href="https://rapidapi.com/api-sports/api/api-nba/" class="button is-info my-2">Voir l'API</a>
+            <a href="" class="button is-warning my-2">Voir le code</a>
+           
+          </p>
+        </div>
+      </section>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+
+          <div class="row">
+
+          <h2 class='h2 mrgn'>Prochain match NBA qui auront lieu le 19 octobre</h2>
+          
+<% x = 0 %>
+ <% @homes.each do |home| %>
+
+<h2>Match <%= x+1 %>  <%= home.code %> vs <%= @visitors[x].code %></h2>
+            <div class="col-md-6">
+              <div class="card mb-4 box-shadow"><center> 
+              <%= image_tag home.logo, style: 'width:100px; height:100px' %>
+                      
+
+               </center>
+                <div class="card-body">
+                <h2 class='h2'>
+                <%= home.name%>
+                </h2>
+                  <h3 class="card-text">
+                 
+                  <%= home.code%>
+                  </h3>
+                  <p class="card-text">
+                   <%= home.nickname%>
+                  </p>
+                  
+                </div>
+              </div>
+ 
+            </div>
+
+
+
+
+            <div class="col-md-6">
+              <div class="card mb-4 box-shadow"><center> 
+               <%= image_tag @visitors[x].logo, style: 'width:auto; height:100px'  %>
+               </center>
+                <div class="card-body">
+                <h2 class='h2'>
+                <%= @visitors[x].name%>
+                </h2>
+                  <h3 class="card-text">
+                  
+                  <%= @visitors[x].code%>
+                  </h3>
+                  <p class="card-text">
+                  <%= @visitors[x].nickname%>
+                  </p>
+                  
+                  
+                </div>
+              </div>
+            </div>
+          
+
+<% x+= 1%>
+<% end %>
+           
+          </div>
+        </div>
+       
+      </div>
+
+    </main>
+
