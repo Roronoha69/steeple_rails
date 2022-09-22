@@ -143,6 +143,7 @@ GEM
       shellany (~> 0.0)
     openssl (3.0.1)
     orm_adapter (0.5.0)
+    pg (1.2.3)
     popper_js (2.9.3)
     pry (0.14.1)
       coderay (~> 1.1)
@@ -225,8 +226,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.5.0)
-      mini_portile2 (~> 2.8.0)
     thor (1.2.1)
     thread_safe (0.3.6)
     tilt (2.0.11)
@@ -274,6 +273,7 @@ DEPENDENCIES
   net-http
   nokogiri
   openssl
+  pg
   puma
   rails (~> 5.1.4)
   sass-rails
@@ -281,7 +281,6 @@ DEPENDENCIES
   simple_form
   spring
   spring-watcher-listen
-  sqlite3
   turbolinks
   tzinfo-data
   uglifier

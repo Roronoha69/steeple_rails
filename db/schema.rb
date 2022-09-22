@@ -12,16 +12,10 @@
 
 ActiveRecord::Schema.define(version: 20220921100921) do
 
-  create_table "homes", force: :cascade do |t|
-    t.string "name"
-    t.string "nickname"
-    t.string "code"
-    t.string "logo"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
-  create_table "matches", force: :cascade do |t|
+  create_table "homes", force: :cascade do |t|
     t.string "name"
     t.string "nickname"
     t.string "code"
